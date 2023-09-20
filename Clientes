@@ -1,0 +1,34 @@
+public class Clientes { 
+  private int codigo; 
+  private String nome; 
+  private boolean eClienteEspecial; 
+  private double limiteCredito; 
+
+  public Clientes (String nome, int codigo){ 
+    this.codigo = codigo; 
+    this.nome = nome; 
+    this.eClienteEspecial = false; 
+    this.limiteCredito = 0; 
+  } public String getNome(){ 
+      return nome; 
+  } 
+
+  public boolean atualizarLimite(double limiteCredito){ 
+    if(eClienteEspecial){ 
+      this.limiteCredito = limiteCredito; 
+      System.out.println("Limite atualizado!"); 
+      return true; 
+  } 
+
+   System.out.println("Não autorizado!"); 
+   return false; 
+  } 
+
+  public void atualizarSituacao(boolean situacao){ 
+    if(situacao){ 
+      this.eClienteEspecial = true; 
+    }else { 
+      this.limiteCredito = 0; 
+    } 
+  } 
+}
